@@ -55,7 +55,7 @@ sudo apt install virtualbox
 ## Inicialize o minikube usando o driver VirtualBox e o IP 192.168.0.10 com o seguinte comando:
 
 ```
-minikube start --vm-driver=virtualbox --kubernetes-version=1.19.4 --apiserver-ips=192.168.0.10 --apiserver-name=192.168.0.10 --cpus=4 --memory=4096 --nodes=4
+minikube start --vm-driver=virtualbox --cpus=2 --memory=4096 --nodes=4
 ```
 
 Isso iniciará um cluster Kubernetes com quatro nodes, cada um com quatro núcleos de CPU e 4 GB de memória. O primeiro node será o node master, e os outros três nodes serão nodes de trabalho. Você pode verificar se o cluster foi criado com sucesso usando o seguinte comando:
