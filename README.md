@@ -2,33 +2,7 @@
 
 ## Instalando o Docker:
 
-Utilize o seguinte comando para remover as versões antigas:
-
-```bash
-sudo apt-get remove docker docker-engine docker.io containerd runc
-```
-
-Instale o Docker usando o seguinte comando:
-
-```
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-```
-
-## Instalando o Containerd
-
-Instale o containerd em sua máquina Linux usando o seguinte comando:
-
-```
-sudo apt-get update
-sudo apt-get install containerd
-```
-
-Inicie o containerd usando o seguinte comando:
-
-```
-sudo systemctl start containerd
-```
+https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/ceb6dc18f9cb5f52519f7449b7b3c9857a096fd3/Instalar%20Docker.md
 
 ## Instalando o Minikube
 
@@ -72,6 +46,12 @@ Verifique se o kubectl foi instalado corretamente executando o comando:
 kubectl version
 ```
 
+## Instalando o VirtualBox
+
+```
+sudo apt install virtualbox
+```
+
 ## Inicialize o minikube usando o driver VirtualBox e o IP 192.168.0.10 com o seguinte comando:
 
 ```
@@ -82,4 +62,10 @@ Isso iniciará um cluster Kubernetes com quatro nodes, cada um com quatro núcle
 
 ```
 kubectl get nodes
+```
+
+Para deletar um cluster minikube, basta executar o seguinte comando:
+
+```
+minikube delete
 ```
