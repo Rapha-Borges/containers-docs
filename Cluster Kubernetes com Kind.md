@@ -1,57 +1,53 @@
 # Instalar o Kind
 
-Para instalar o Kind, você precisará ter o Go e o Docker instalados em seu sistema.
+---
+### Para o correto funcionamento do Kind você precisa ter o Docker e o Kubectl instalado.
 
-## Go
+### Instalando o Docker:
 
-Primeiro, verifique se você já tem o go instalado. Para isso, execute o comando:
+https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Instalar%20Docker.md
 
-```
-go version
-```
+### Instalando o Kubectl:
 
-Se você já tiver o go instalado, o comando exibirá a versão instalada. Se você não tiver o go instalado, será exibida uma mensagem de erro.
+https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Instalar%20o%20Kubectl.md
 
-Se você ainda não tiver o go instalado, siga as instruções para instalar o go em seu sistema operacional:
+---
 
 ### Linux
 
-Para instalar o go no Linux, você pode baixar o pacote de instalação do site oficial do Go e instalá-lo manualmente.
-
-Alternativamente, você também pode usar o gerenciador de pacotes do seu sistema para instalar o go. Por exemplo, no Ubuntu, você pode usar o seguinte comando:
+Para instalar o Kind no Linux execute os seguintes comandos:
 
 ```
-sudo apt-get install golang-go
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-linux-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/kind
 ```
 
 ### macOS
 
-Para instalar o go no macOS, você pode baixar o pacote de instalação do site oficial do Go e instalá-lo manualmente.
+Para instalar o Kind no macOS execute os seguintes comandos:
 
-Alternativamente, você também pode usar o Homebrew para instalar o go. Para isso, execute o seguinte comando:
+Para Intel Macs
 
 ```
-brew install go
+[ $(uname -m) = x86_64 ]&& curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-darwin-amd64
+```
+
+Para M1 / ARM Macs
+
+```
+[ $(uname -m) = arm64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-darwin-arm64
+chmod +x ./kind
+mv ./kind /some-dir-in-your-PATH/kind
 ```
 
 ### Windows
 
-Para instalar o Go no Windows, você pode baixar o instalador do site oficial e executá-lo.
-
-Acesse o site do Go em https://golang.org/dl/ e clique no botão "Download Go" para baixar o instalador. Depois de baixar o instalador, execute-o e siga as instruções na tela para completar a instalação.
-
-## Instalando o Docker:
-
-https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/ceb6dc18f9cb5f52519f7449b7b3c9857a096fd3/Instalar%20Docker.md
-
-## Kind
-
-Agora que você tem o go e o git instalados, você pode prosseguir com a instalação do kind.
-
-Para instalar o kind, execute os seguintes comandos:
+Para instalar o Kind no Windows execute os seguintes comandos no PowerShell:
 
 ```
-go install sigs.k8s.io/kind@v0.17.0 && kind create cluster
+curl.exe -Lo kind-windows-amd64.exe https://kind.sigs.k8s.io/dl/v0.17.0/kind-windows-amd64
+Move-Item .\kind-windows-amd64.exe c:\some-dir-in-your-PATH\kind.exe
 ```
 
 Para verificar se o Kind foi instalado corretamente execute o comando:
@@ -60,4 +56,74 @@ Para verificar se o Kind foi instalado corretamente execute o comando:
 kind version
 ```
 
-Se a instalação foi bem-sucedida, o comando exibirá a versão do kind instalada.
+Se a instalação foi bem-sucedida, o comando exibirá a versão do Kind instalada.
+
+## Auto completion
+
+### Bash
+
+```
+sudo echo "source <(kind completion bash)" >> ~/.bashrc
+source ~/.bashrc
+```
+
+### Zsh
+
+```
+sudo echo "source <(kind completion zsh)" >> ~/.zshrc
+source ~/.zshrc
+```
+
+# Criar o cluster
+
+Para criar o cluster simples com 1 node execute o comando:
+
+```
+kind create cluster --name <nome do cluster>
+```
+
+Para criar um Cluster com 6 nodes crie um arquivo YAML com o seguinte comando:
+
+```
+nano kind-cluster.yaml
+```
+
+Cole o texto:
+
+```
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: control-plane
+- role: control-plane
+- role: worker
+- role: worker
+- role: worker
+```
+
+Pressione ```Ctrl + X``` então ```y``` para salvar e ```Enter``` para fechar
+
+Crei o cluster com o comando:
+
+```
+kind create cluster --name <nome do cluster> --config kind-cluster.yaml
+```
+
+### Alternar entre os clusters
+
+Para listar os clusters execute esse comando:
+
+```
+kubectl config get-contexts
+```
+
+Para mudar o cluster:
+
+```
+kubectl config use-contexts <nome do cluster>
+```
+
+# Para seguir com configurações avançadas utilizando o Kind você pode acessar esse arquivo:
+
+https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Avan%C3%A7ando%20com%20Cluster%20no%20Kind.md
