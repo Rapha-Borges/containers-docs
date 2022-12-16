@@ -1,48 +1,29 @@
-# Criando cluster Kubernetes local com 4 nodes utilizando o Minikube
+# Repositório de documentação em construção para implementação de containers
 
-## Instalando o Docker:
+### Instalando o Docker:
 
 https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Instalar%20Docker.md
 
-## Instalando o Kubectl
+### Instalando o Kubectl
 
 https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Instalar%20o%20Kubectl.md
 
-## Instalando o Minikube
+### Criando cluster Kubernetes local com 4 nodes utilizando o Minikube
 
-Instale o minikube na sua máquina Linux usando o seguinte comando:
+https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Cluster%20Kubernetes%20com%20Minikube.md
 
-```
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 \
-  && chmod +x minikube
-```
+### Criando cluster Kubernetes com Kind
 
-Adicione o minikube ao seu PATH para que você possa executar o minikube a partir de qualquer local em sua máquina Linux usando o seguinte comando:
+https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Cluster%20Kubernetes%20com%20Kind.md
 
-```
-sudo install minikube /usr/local/bin
-```
+### Avançando com cluster Kubernetes no Kind
 
-## Instalando o VirtualBox
+https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Avan%C3%A7ando%20com%20Cluster%20no%20Kind.md
 
-```
-sudo apt install virtualbox
-```
+### Desativar partição SWAP
 
-## Inicialize o minikube usando o driver VirtualBox e o IP 192.168.0.10 com o seguinte comando:
+https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Desativar%20Swap.md
 
-```
-minikube start --vm-driver=virtualbox --cpus=2 --memory=4096 --nodes=4
-```
+### Habilitar SSH
 
-Isso iniciará um cluster Kubernetes com quatro nodes, cada um com quatro núcleos de CPU e 4 GB de memória. O primeiro node será o node master, e os outros três nodes serão nodes de trabalho. Você pode verificar se o cluster foi criado com sucesso usando o seguinte comando:
-
-```
-kubectl get nodes
-```
-
-Para deletar um cluster minikube, basta executar o seguinte comando:
-
-```
-minikube delete
-```
+https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Habilitar%20SSH.md
