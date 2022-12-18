@@ -41,3 +41,20 @@ Com isso, o Docker estará instalado e pronto para ser utilizado no Pop!_OS. É 
 ```
 sudo usermod -aG docker $USER
 ```
+
+# Instalando Docker Compose
+
+## Ubuntu:
+
+Para instalar o Docker Compose atualize o gerenciador de pacotes e rode o comando de instalação:
+
+```
+sudo apt-get update
+sudo apt-get install docker-compose-plugin
+```
+
+Verifique a instalação:
+
+```
+docker compose version
+```

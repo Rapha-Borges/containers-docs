@@ -124,6 +124,18 @@ Para mudar o cluster:
 kubectl config use-contexts <nome do cluster>
 ```
 
+Para deletar o cluster:
+
+```
+kind delete cluster --name <nome do cluster>
+```
+
+Para deletar todos os clusters:
+
+```
+kind delete clusters --all
+```
+
 # Para seguir com configurações avançadas utilizando o Kind você pode acessar esse arquivo:
 
 https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Avan%C3%A7ando%20com%20Cluster%20no%20Kind.md
