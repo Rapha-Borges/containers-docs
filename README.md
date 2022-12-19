@@ -42,6 +42,6 @@ Link para documentação 'Habilitar SSH'
 
 <br>
 
->  -Já tem inumeros conteúdos por ai, mas não tem nenhum que foi você que fez.<br>
+>  -Já tem inúmeros conteúdos por ai, mas não tem nenhum que foi você que fez.<br>
 >  -Não tem o seu ponto de vista sobre isso.<br>
 > [Kubicast #95 - FOMGO - Fear of missing Gomex](https://open.spotify.com/episode/3rq8e4JpMXyylqEkImKHtL?si=72de6899e93048e7) com [Gomex (Rafael Gomes)](https://github.com/gomex) e [João Brito](https://github.com/juniorjbn)
