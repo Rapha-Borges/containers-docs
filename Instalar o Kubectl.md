@@ -1,5 +1,6 @@
-## Instalando o Kubectl
+# Instalando o Kubectl
 
+## Linux
 Instale o kubectl na sua máquina Linux usando o seguinte comando:
 
 ```
@@ -23,4 +24,71 @@ Verifique se o kubectl foi instalado corretamente executando o comando:
 
 ```
 kubectl version
+```
+
+# Adicionando o alias ```k``` para o comando ```kubectl```:
+
+### Bash
+
+```
+echo "alias k=kubectl" >> ~/.bashrc
+echo 'complete -o default -F __start_kubectl k' >>~/.bashrc
+```
+
+### Zsh
+
+```
+echo "alias k=kubectl" >> ~/.zshrc
+```
+
+### Caso ao reiniciar ou abrir uma nova aba o alias ```k``` não seja reconhecido, provavelmente é porque você não adicionou o ```kubectl``` ao PATH. Você pode fazer isso da seguinte forma:
+
+### Bash
+
+```
+echo 'export PATH=$PATH:/usr/local/bin/kubectl' >> ~/.bashrc
+```
+
+### Zsh
+
+```
+echo 'export PATH=$PATH:/usr/local/bin/kubectl' >> ~/.zshrc
+```
+
+# Habilitando o autocompletar do kubectl:
+
+## Linux
+
+### Bash
+
+Instale o módulo do bash-completion usando o seguinte comando:
+
+```
+sudo apt-get install bash-completion
+```
+
+Execute os seguintes comandos para habilitar o autocompletar:
+
+```
+source <(kubectl completion bash) # configuração de autocomplete no bash do shell atual
+echo 'source <(kubectl completion bash)' >> ~/.bashrc # para adicionar o autocomplete permanentemente no seu shell bash
+```
+
+Recarregue o arquivo de configuração:
+
+```
+source ~/.bashrc
+```
+
+### Zsh
+
+```
+source <(kubectl completion zsh) # configuração para usar autocomplete no terminal zsh no shell atual
+echo "if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi" >> ~/.zshrc # adicionar auto completar permanentemente para o seu shell zsh
+```
+
+Recarregue o arquivo de configuração:
+
+```
+source ~/.zshrc
 ```
