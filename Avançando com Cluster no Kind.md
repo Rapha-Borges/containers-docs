@@ -156,4 +156,6 @@ kubectl get ingress
 kubectl describe ingress <nome do ingress>
 ```
 
+<!-- markdown-link-check-disable -->
 Agora você pode acessar: http://localhost/ ```Path``` para ver a aplicação funcionando
+<!-- markdown-link-check-enable-->
