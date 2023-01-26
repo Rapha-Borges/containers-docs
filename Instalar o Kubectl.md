@@ -26,6 +26,54 @@ Verifique se o kubectl foi instalado corretamente executando o comando:
 kubectl version
 ```
 
+## macOS
+
+Faça o download da última versão:
+
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
+```
+
+Valide o arquivo de instalaçao:
+
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl.sha256"
+```
+```
+echo "$(cat kubectl.sha256)  kubectl" | shasum -a 256 --check
+```
+```
+kubectl: OK
+```
+
+Dê permisão de execução para o arquivo
+
+```
+chmod +x ./kubectl
+```
+
+Movo o arquivo binário para o PATH do sistema:
+
+```
+sudo mv ./kubectl /usr/local/bin/kubectl
+sudo chown root: /usr/local/bin/kubectl
+```
+
+Verifique a isntalação:
+
+```
+kubectl version --client
+```
+
+Você também pode instalar utilizando o brew:
+
+```
+brew install kubectl
+```
+```
+kubectl version --client
+```
+
 # Adicionando o alias ```k``` para o comando ```kubectl```:
 
 ### Bash
