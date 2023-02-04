@@ -4,9 +4,9 @@
 
 #### Para o correto funcionamento do Kind você precisa ter o Docker e o Kubectl instalado.
 
-#### [Instalando o Docker](https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Instalar%20Docker.md)
+#### [Instalando o Docker](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/instalando-o-docker.md)
 
-#### [Instalando o Kubectl](https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Instalar%20o%20Kubectl.md)
+#### [Instalando o Kubectl](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/instalando-o-kubectl.md)
 
 #### Linux
 
@@ -133,4 +133,4 @@ kind delete clusters --all
 
 ## Para seguir com configurações avançadas utilizando o Kind você pode acessar esse arquivo:
 
-https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Avan%C3%A7ando%20com%20Cluster%20no%20Kind.md
+https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/avancando-com-kind.md
