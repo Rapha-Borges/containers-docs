@@ -1,4 +1,4 @@
-# Para instalar o Docker, basta seguir os seguintes passos:
+# Instalando o Docker
 
 Abra o terminal e atualize o gerenciador de pacotes:
 
@@ -36,7 +36,7 @@ Verifique se o Docker foi instalado corretamente executando o comando:
 docker --version
 ```
 
-Com isso, o Docker estará instalado e pronto para ser utilizado no Pop!_OS. É importante lembrar de adicionar o usuário atual ao grupo docker para poder executar comandos do Docker sem utilizar o sudo. Isso pode ser feito com o comando:
+Com isso, o Docker estará instalado e pronto para ser utilizado. É importante lembrar de adicionar o usuário atual ao grupo docker para poder executar comandos do Docker sem utilizar o sudo. Isso pode ser feito com o comando:
 
 ```
 sudo usermod -aG docker $USER

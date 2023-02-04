@@ -1,19 +1,14 @@
-# Instalar o Kind
+# Criando cluster Kubernetes com Kind
 
----
-### Para o correto funcionamento do Kind você precisa ter o Docker e o Kubectl instalado.
+## Instalar o Kind
 
-### Instalando o Docker:
+#### Para o correto funcionamento do Kind você precisa ter o Docker e o Kubectl instalado.
 
-https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Instalar%20Docker.md
+#### [Instalando o Docker](https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Instalar%20Docker.md)
 
-### Instalando o Kubectl:
+#### [Instalando o Kubectl](https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Instalar%20o%20Kubectl.md)
 
-https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Instalar%20o%20Kubectl.md
-
----
-
-### Linux
+#### Linux
 
 Para instalar o Kind no Linux execute os seguintes comandos:
 
@@ -23,7 +18,7 @@ chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 ```
 
-### macOS
+#### macOS
 
 Para instalar o Kind no macOS execute os seguintes comandos:
 
@@ -41,7 +36,7 @@ chmod +x ./kind
 mv ./kind /some-dir-in-your-PATH/kind
 ```
 
-### Windows
+#### Windows
 
 Para instalar o Kind no Windows execute os seguintes comandos no PowerShell:
 
@@ -58,23 +53,23 @@ kind version
 
 Se a instalação foi bem-sucedida, o comando exibirá a versão do Kind instalada.
 
-## Auto completion
+### Auto completion
 
-### Bash
+#### Bash
 
 ```
 sudo echo "source <(kind completion bash)" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-### Zsh
+#### Zsh
 
 ```
 sudo echo "source <(kind completion zsh)" >> ~/.zshrc
 source ~/.zshrc
 ```
 
-# Criar o cluster
+## Criar o cluster
 
 Para criar o cluster simples com 1 node execute o comando:
 
@@ -110,7 +105,7 @@ Crei o cluster com o comando:
 kind create cluster --name <nome do cluster> --config kind-cluster.yaml
 ```
 
-### Alternar entre os clusters
+#### Alternar entre os clusters
 
 Para listar os clusters execute esse comando:
 
@@ -136,6 +131,6 @@ Para deletar todos os clusters:
 kind delete clusters --all
 ```
 
-# Para seguir com configurações avançadas utilizando o Kind você pode acessar esse arquivo:
+## Para seguir com configurações avançadas utilizando o Kind você pode acessar esse arquivo:
 
 https://github.com/Rapha-Borges/Cluster-Kubernetes/blob/main/Avan%C3%A7ando%20com%20Cluster%20no%20Kind.md

@@ -115,11 +115,16 @@ Instale o módulo do bash-completion usando o seguinte comando:
 sudo apt-get install bash-completion
 ```
 
-Execute os seguintes comandos para habilitar o autocompletar:
+Configuração de autocomplete no bash do shell atual:
 
 ```
-source <(kubectl completion bash) # configuração de autocomplete no bash do shell atual
-echo 'source <(kubectl completion bash)' >> ~/.bashrc # para adicionar o autocomplete permanentemente no seu shell bash
+source <(kubectl completion bash)
+```
+
+Para adicionar o autocomplete permanentemente no seu shell bash:
+
+```
+echo 'source <(kubectl completion bash)' >> ~/.bashrc
 ```
 
 Recarregue o arquivo de configuração:
@@ -130,9 +135,16 @@ source ~/.bashrc
 
 ### Zsh
 
+Configuração para usar autocomplete no terminal zsh no shell atual:
+
 ```
-source <(kubectl completion zsh) # configuração para usar autocomplete no terminal zsh no shell atual
-echo "if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi" >> ~/.zshrc # adicionar auto completar permanentemente para o seu shell zsh
+source <(kubectl completion zsh)
+```
+
+Adicionar auto completar permanentemente para o seu shell zsh:
+
+```
+echo "if [ $commands[kubectl] ]; then source <(kubectl completion zsh); fi" >> ~/.zshrc 
 ```
 
 Recarregue o arquivo de configuração:

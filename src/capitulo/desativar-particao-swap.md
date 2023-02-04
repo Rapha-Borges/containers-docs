@@ -1,4 +1,4 @@
-# Para desativar o swap de forma definitiva, você pode seguir os seguintes passos:
+# Desativar partição SWAP
 
 Abra o terminal e verifique o nome do arquivo de swap com o comando:
 

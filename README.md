@@ -1,30 +1,33 @@
-# Repositório de documentação em construção para implementação de containers
+# [Clique aqui para a versão em livro](https://documentacao-containers.vercel.app/)
 
-### &#x2022; [Instalando o Docker](https://github.com/Rapha-Borges/containers-docs/blob/main/Instalar%20Docker.md)
+
+# Repositório de documentação em construção para utilização de containers
+
+### &#x2022; [Instalando o Docker](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/instalando-o-docker.md)
 
 Link para a documentação 'Instalando o Docker'
 
-### &#x2022; [Instalando o Kubectl](https://github.com/Rapha-Borges/containers-docs/blob/main/Instalar%20o%20Kubectl.md)
+### &#x2022; [Instalando o Kubectl](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/instalando-o-kubectl.md)
 
 Link para a documentação 'Instalando o Kubectl'
 
-### &#x2022; [Criando cluster Kubernetes com Minikube](https://github.com/Rapha-Borges/containers-docs/blob/main/Cluster%20Kubernetes%20com%20Minikube.md)
+### &#x2022; [Criando cluster Kubernetes com Minikube](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/criando-cluster-kubernetes-com-minikube.md)
 
 Link para documentação 'Criando cluster Kubernetes local com 4 nodes utilizando o Minikube'
 
-### &#x2022; [Criando cluster Kubernetes com Kind](https://github.com/Rapha-Borges/containers-docs/blob/main/Cluster%20Kubernetes%20com%20Kind.md)
+### &#x2022; [Criando cluster Kubernetes com Kind](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/criando-cluster-kubernetes-com-kind.md)
 
 Link para documentação 'Criando cluster Kubernetes com Kind'
 
-### &#x2022; [Avançando com Kind](https://github.com/Rapha-Borges/containers-docs/blob/main/Avan%C3%A7ando%20com%20Cluster%20no%20Kind.md)
+### &#x2022; [Avançando com Kind](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/avancando-com-kind.md)
 
 Link para documentação 'Avançando com cluster Kubernetes no Kind'
 
-### &#x2022; [Desativar partição SWAP](https://github.com/Rapha-Borges/containers-docs/blob/main/Desativar%20Swap.md)
+### &#x2022; [Desativar partição SWAP](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/desativar-particao-swap.md)
 
 Link para documentação 'Desativar partição SWAP'
 
-### &#x2022; [Habilitar SSH](https://github.com/Rapha-Borges/containers-docs/blob/main/Habilitar%20SSH.md)
+### &#x2022; [Habilitar SSH](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/habilitar-ssh.md)
 
 Link para documentação 'Habilitar SSH'
 

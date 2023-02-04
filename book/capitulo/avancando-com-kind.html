@@ -1,0 +1,335 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Avançando com Kind - Documentação Containers</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Inicio</a></li><li class="chapter-item expanded "><a href="../capitulo/instalando-o-docker.html"><strong aria-hidden="true">1.</strong> Instalando o Docker</a></li><li class="chapter-item expanded "><a href="../capitulo/instalando-o-kubectl.html"><strong aria-hidden="true">2.</strong> Instalando o Kubectl</a></li><li class="chapter-item expanded "><a href="../capitulo/criando-cluster-kubernetes-com-minikube.html"><strong aria-hidden="true">3.</strong> Criando cluster Kubernetes com Minikube</a></li><li class="chapter-item expanded "><a href="../capitulo/criando-cluster-kubernetes-com-kind.html"><strong aria-hidden="true">4.</strong> Criando cluster Kubernetes com Kind</a></li><li class="chapter-item expanded "><a href="../capitulo/avancando-com-kind.html" class="active"><strong aria-hidden="true">5.</strong> Avançando com Kind</a></li><li class="chapter-item expanded "><a href="../capitulo/desativar-partição-swap.html"><strong aria-hidden="true">6.</strong> Desativar partição SWAP</a></li><li class="chapter-item expanded "><a href="../capitulo/habilitar-ssh.html"><strong aria-hidden="true">7.</strong> Habilitar SSH</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Documentação Containers</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="avançando-com-kind"><a class="header" href="#avançando-com-kind">Avançando com Kind</a></h1>
+<h2 id="criando-um-cluster-com-ingress-ngnix"><a class="header" href="#criando-um-cluster-com-ingress-ngnix">Criando um cluster com Ingress Ngnix</a></h2>
+<p>Crie um arquivo YAML com o seguinte comando:</p>
+<pre><code>nano kind-ingress.yaml
+</code></pre>
+<p>Cole o texto:</p>
+<pre><code>kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  kubeadmConfigPatches:
+  - |
+    kind: InitConfiguration
+    nodeRegistration:
+      kubeletExtraArgs:
+        node-labels: &quot;ingress-ready=true&quot;
+  extraPortMappings:
+  - containerPort: 80
+    hostPort: 80
+    protocol: TCP
+  - containerPort: 443
+    hostPort: 443
+    protocol: TCP
+- role: worker
+</code></pre>
+<p>Pressione <code>Ctrl + X</code> então <code>y</code> para salvar e <code>Enter</code> para fechar</p>
+<p>Crei o cluster com o comando:</p>
+<pre><code>kind create cluster --name &lt;nome do cluster&gt; --config kind-ingress.yaml
+</code></pre>
+<p>Implemente o controlador do Ingress Nginx no cluster Kubernetes.</p>
+<pre><code>kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+</code></pre>
+<p>Crie um arquivo YAML com o seguinte comando:</p>
+<pre><code>nano testing-ingress.yaml
+</code></pre>
+<p>Cole o seguinte texto substituindo <code>&lt;nome&gt;</code> pelo nome da primeira aplicação e <code>&lt;nome2&gt;</code> pelo nome da segunda aplicação:</p>
+<pre><code>kind: Pod
+apiVersion: v1
+metadata:
+  name: &lt;nome&gt;
+  labels:
+    app: &lt;nome&gt;
+spec:
+  containers:
+  - name: &lt;nome&gt;-app
+    image: hashicorp/http-echo:0.2.3
+    args:
+    - &quot;-text=FUNCIONOU_&lt;nome&gt;&quot;
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: &lt;nome&gt;-service
+spec:
+  selector:
+    app: &lt;nome&gt;
+  ports:
+  # Default port used by the image
+  - port: 5678
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: &lt;nome2&gt;-app
+  labels:
+    app: &lt;nome2&gt;
+spec:
+  containers:
+  - name: &lt;nome2&gt;-app
+    image: hashicorp/http-echo:0.2.3
+    args:
+    - &quot;-text=FUNCIONOU_&lt;nome2&gt;&quot;
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: &lt;nome2&gt;-service
+spec:
+  selector:
+    app: &lt;nome2&gt;
+  ports:
+  # Default port used by the image
+  - port: 5678
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: &quot;/&lt;nome&gt;&quot;
+        backend:
+          service:
+            name: &lt;nome&gt;-service
+            port:
+              number: 5678
+      - pathType: Prefix
+        path: &quot;/&lt;nome2&gt;&quot;
+        backend:
+          service:
+            name: &lt;nome2&gt;-service
+            port:
+              number: 5678
+      
+---
+</code></pre>
+<p>Pressione <code>Ctrl + X</code> então <code>y</code> para salvar e <code>Enter</code> para fechar</p>
+<p>Execute com o comando:</p>
+<pre><code>kubectl create -f testing-ingress.yaml
+</code></pre>
+<p>Confirme que os Pods estão com status <code>Running</code>:</p>
+<pre><code>kubectl get pods
+</code></pre>
+<p>Os serviços estão rodando:</p>
+<pre><code>kubectl get svc
+</code></pre>
+<p>E o Ingress está correto:</p>
+<pre><code>kubectl get ingress
+</code></pre>
+<pre><code>kubectl describe ingress &lt;nome do ingress&gt;
+</code></pre>
+<p>Agora você pode acessar: http://localhost/ <code>Path</code> para ver a aplicação funcionando</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../capitulo/criando-cluster-kubernetes-com-kind.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../capitulo/desativar-partição-swap.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../capitulo/criando-cluster-kubernetes-com-kind.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../capitulo/desativar-partição-swap.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
