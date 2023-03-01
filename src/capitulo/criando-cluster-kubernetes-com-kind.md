@@ -20,20 +20,10 @@ sudo mv ./kind /usr/local/bin/kind
 
 #### macOS
 
-Para instalar o Kind no macOS execute os seguintes comandos:
-
-Para Intel Macs
+Para instalar o Kind no macOS execute o seguinte comando:
 
 ```
-[ $(uname -m) = x86_64 ]&& curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-darwin-amd64
-```
-
-Para M1 / ARM Macs
-
-```
-[ $(uname -m) = arm64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.17.0/kind-darwin-arm64
-chmod +x ./kind
-mv ./kind /some-dir-in-your-PATH/kind
+brew install kind
 ```
 
 #### Windows
