@@ -1,7 +1,7 @@
 # [Clique aqui para a versão em livro](https://documentacao-containers.vercel.app/)
 
 
-# Repositório de documentação em construção para utilização de containers
+# Nesta documentação, você encontrará um guia em constante contrução para uso de containers em seus projetos. Além disso, para tornar mais fácil o acesso a este material, fiz o deploy automatizado da documentação em formato de livro na plataforma Vercel.
 
 ### &#x2022; [Instalando o Docker](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/instalando-o-docker.md)
 
