@@ -1,0 +1,36 @@
+[book]
+authors = ["Raphael-Borges"]
+language = "pt-BR"
+multilingual = false
+src = "src"
+title = "Documentação Containers"
+
+[output.html]
+git-repository-url = "https://github.com/Rapha-Borges/containers-docs"
+edit-url-template = "https://github.com/Rapha-Borges/containers-docs/edit/main/pt/{path}"
+cname = "https://doc-containers.r11s.com.br/index.html"
+additional-css = ["theme/css/style.css", "theme/css/mdbook-admonish.css"]
+
+[[output.i18n.translations]]
+language = "en"
+title = "Title"
+src = "translations/en"
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
+
+[preprocessor]
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "2.0.0" # do not edit: managed by `mdbook-admonish install`
+
+[output.html.fold]
+enable = true    # whether or not to enable section folding
+level = 0         # the depth to start folding

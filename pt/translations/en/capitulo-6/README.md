@@ -1,0 +1,1 @@
+# Disabling the SWAP partition

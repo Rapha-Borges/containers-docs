@@ -1,0 +1,91 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0;
+    background-color: #161923;
+    color: #bcbdd0;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1  {
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+table {
+    width: 100%;
+}
+
+table td {
+    padding: 0 15px;
+}
+
+.card {
+    background-color: rgb(216, 223, 223);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    height: 100px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.card:hover {
+    box-shadow: 5px 15px 20px 5px rgba(0,0,0,0.2);
+}
+
+.btn {
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 1200px) {
+    .btn {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .btn {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    table tr {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    table tr td {
+        margin-bottom: 25px;
+    }
+    
+    .btn {
+        font-size: 6vw;
+    }
+}

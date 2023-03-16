@@ -1,0 +1,1 @@
+# Desativar partição SWAP

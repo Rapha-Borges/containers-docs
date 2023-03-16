@@ -1,36 +1,50 @@
-name: Build Book & Deploy to Vercel
-
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
-on: [push]
+name: Deploy
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  buildAndDeploy:
+  deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # To push a branch 
+      pull-requests: write  # To create a PR from that branch
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Install mdBook
-        uses: extractions/setup-crate@v1
-        with:
-          owner: rust-lang
-          name: mdBook
-
-      - name: Generate static content for the book
-        run: mdbook build
-
-      - name: Setup Node.js (required to install Vercel CLI)
-        uses: actions/setup-node@v3
-
-      - name: Install Vercel CLI
-        run: npm install --global vercel
-
-      - name: Pull Vercel environment information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Deploy to Vercel
-        run: vercel book --prod --token=${{ secrets.VERCEL_TOKEN }}
-
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Install mdbook
+      run: |
+        mkdir mdbook
+        curl -sSL https://github.com/rust-lang/mdBook/releases/download/v0.4.28/mdbook-v0.4.28-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=./mdbook
+        curl -sSL https://github.com/tommilligan/mdbook-admonish/releases/download/v1.8.0/mdbook-admonish-v1.8.0-x86_64-unknown-linux-gnu.tar.gz | tar -xz --directory=./mdbook
+        echo `pwd`/mdbook >> $GITHUB_PATH
+        cargo install mdbook-i18n
+    - name: Deploy
+      run: |
+        cd pt
+        mdbook build
+        git worktree add gh-pages
+        git config user.name "Deploy from CI"
+        git config user.email ""
+        cd gh-pages
+        # Delete the ref to avoid keeping history.
+        git update-ref -d refs/heads/gh-pages
+        rm -rf *
+        mv ../book/i18n/* .
+        git add .
+        git commit -m "Deploy $GITHUB_SHA to gh-pages"
+        git push --force origin gh-pages  
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Copy index.html to .
+      run: |
+        cp -r ./home/* .
+        git config user.name "Deploy from CI"
+        git config user.email ""
+        git checkout gh-pages        
+        git add .
+        git commit -m "Deploy $GITHUB_SHA to gh-pages"
+        git push --force origin gh-pages
