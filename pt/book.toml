@@ -1,6 +1,6 @@
 [book]
 authors = ["Raphael-Borges"]
-language = "pt-BR"
+language = "pt"
 multilingual = false
 src = "src"
 title = "Documentação Containers"
