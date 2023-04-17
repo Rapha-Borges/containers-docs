@@ -2,33 +2,33 @@
 
 ### Nesta documentação, você encontrará um guia em constante contrução para uso de containers em seus projetos. Além disso, para tornar mais fácil o acesso a este material, fiz o deploy automatizado da documentação em formato de livro na plataforma Vercel.
 
-#### Acesse a versão em livro [clicando aqui.](https://documentacao-containers.vercel.app/)
+#### Acesse a versão em livro [clicando aqui.](https://www.r11s.com.br/containers-docs/)
 
-### &#x2022; [Instalando o Docker](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/instalando-o-docker.md)
+### &#x2022; [Instalando o Docker](https://github.com/Rapha-Borges/containers-docs/blob/main/pt/src/capitulo-1/instalando-o-docker.md)
 
 Link para a documentação 'Instalando o Docker'
 
-### &#x2022; [Instalando o Kubectl](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/instalando-o-kubectl.md)
+### &#x2022; [Instalando o Kubectl](https://github.com/Rapha-Borges/containers-docs/blob/main/pt/src/capitulo-2/instalando-o-kubectl.md)
 
 Link para a documentação 'Instalando o Kubectl'
 
-### &#x2022; [Criando cluster Kubernetes com Minikube](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/criando-cluster-kubernetes-com-minikube.md)
+### &#x2022; [Criando cluster Kubernetes com Minikube](https://github.com/Rapha-Borges/containers-docs/blob/main/pt/src/capitulo-3/criando-cluster-kubernetes-com-minikube.md)
 
 Link para documentação 'Criando cluster Kubernetes local com 4 nodes utilizando o Minikube'
 
-### &#x2022; [Criando cluster Kubernetes com Kind](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/criando-cluster-kubernetes-com-kind.md)
+### &#x2022; [Criando cluster Kubernetes com Kind](https://github.com/Rapha-Borges/containers-docs/blob/main/pt/src/capitulo-4/criando-cluster-kubernetes-com-kind.md)
 
 Link para documentação 'Criando cluster Kubernetes com Kind'
 
-### &#x2022; [Avançando com Kind](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/avancando-com-kind.md)
+### &#x2022; [Avançando com Kind](https://github.com/Rapha-Borges/containers-docs/blob/main/pt/src/capitulo-5/avancando-com-kind.md)
 
 Link para documentação 'Avançando com cluster Kubernetes no Kind'
 
-### &#x2022; [Desativar partição SWAP](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/desativar-particao-swap.md)
+### &#x2022; [Desativar partição SWAP](https://github.com/Rapha-Borges/containers-docs/blob/main/pt/src/capitulo-6/desativar-particao-swap.md)
 
 Link para documentação 'Desativar partição SWAP'
 
-### &#x2022; [Habilitar SSH](https://github.com/Rapha-Borges/containers-docs/blob/main/src/capitulo/habilitar-ssh.md)
+### &#x2022; [Habilitar SSH](https://github.com/Rapha-Borges/containers-docs/blob/main/pt/src/capitulo-7/habilitar-ssh.md)
 
 Link para documentação 'Habilitar SSH'
 
